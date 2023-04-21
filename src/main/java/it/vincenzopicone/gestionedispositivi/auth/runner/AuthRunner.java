@@ -33,17 +33,8 @@ public class AuthRunner implements ApplicationRunner {
 	
 	@Override
 	public void run(ApplicationArguments args) throws Exception {
-		System.out.println("Run...");
-		setRoleDefault();
-//		Role R1 = new Role(1l, ERole.ROLE_ADMIN);
-//		Role R2 = new Role(1l, ERole.ROLE_MODERATOR);
-//		Role R3 = new Role(1l, ERole.ROLE_USER);
-//		Set<Role> R = new HashSet<>();
-//		R.add(R1);
-//		R.add(R2);
-//		R.add(R3);
-//		
-//		User U1 = new User(1l, "Vincenzo", "Picone", "v.picone@example.com", "password", R);
+		System.out.println("Run...AUTH");
+
 		
 		
 	}

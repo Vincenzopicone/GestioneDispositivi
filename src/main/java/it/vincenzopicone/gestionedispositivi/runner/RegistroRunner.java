@@ -21,6 +21,7 @@ public class RegistroRunner implements ApplicationRunner {
 	@Autowired RegistroService regServ;
 	@Override
 	public void run(ApplicationArguments args) throws Exception {
+		System.out.println("Registro...RUN");
 		
 		
 		///creo utenti casuali
@@ -43,22 +44,23 @@ public class RegistroRunner implements ApplicationRunner {
 //			dispServ.createDispositivo(D4);
 //			
 //		}
+//		
 		
+//		Dipendente Dip1 = dipServ.getDipendente(1l);
+//		Dipendente Dip2 = dipServ.getDipendente(2l);
+//		Dipendente Dip3 = dipServ.getDipendente(3l);
+//		Dipendente Dip4 = dipServ.getDipendente(4l);
+//		Dipendente Dip5 = dipServ.getDipendente(5l);
+//		Dipendente Dip6 = dipServ.getDipendente(6l);
+//		
+//		Dispositivo D1 = dispServ.getDispositivo(1l);
+//		Dispositivo D2 = dispServ.getDispositivo(2l);
+//		Dispositivo D3 = dispServ.getDispositivo(3l);
+//		Dispositivo D4 = dispServ.getDispositivo(4l);
+//		Dispositivo D5 = dispServ.getDispositivo(5l);
+//		Dispositivo D6 = dispServ.getDispositivo(6l);
 		
-		Dipendente Dip1 = dipServ.getDipendente(1l);
-		Dipendente Dip2 = dipServ.getDipendente(2l);
-		Dipendente Dip3 = dipServ.getDipendente(3l);
-		Dipendente Dip4 = dipServ.getDipendente(4l);
-		Dipendente Dip5 = dipServ.getDipendente(5l);
-		Dipendente Dip6 = dipServ.getDipendente(6l);
-		
-		Dispositivo D1 = dispServ.getDispositivo(1l);
-		Dispositivo D2 = dispServ.getDispositivo(2l);
-		Dispositivo D3 = dispServ.getDispositivo(3l);
-		Dispositivo D4 = dispServ.getDispositivo(4l);
-		Dispositivo D5 = dispServ.getDispositivo(5l);
-		Dispositivo D6 = dispServ.getDispositivo(6l);
-		
+		/// creo associazioni di dispositivi e dipendenti
 //		regServ.createRegistro(Dip1, D2);
 //		regServ.createRegistro(Dip2, D1);
 //		regServ.createRegistro(Dip3, D5);
@@ -66,7 +68,9 @@ public class RegistroRunner implements ApplicationRunner {
 //		regServ.createRegistro(Dip5, D4);
 //		regServ.createRegistro(Dip6, D6);
 		
-		dispServ.updateDispositivoInManutenzione(D3);
+		
+		/// cambio stato manutenzione dispositivo
+//		dispServ.updateDispositivoInManutenzione(D3);
 		
 		
 		
