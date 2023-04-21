@@ -34,6 +34,16 @@ public class DipendenteService {
 		return dip;
 		
 	}
+	public Dipendente createDipendenteFake() {
+		Dipendente D = fakeDipendenteProvider.getObject();
+		if(repo.existsByEmail(D.getEmail())) {
+			throw new EntityExistsException("L'email esiste");
+		} else {
+		repo.save(D);
+		}
+		return D;
+		
+	}
 	
 	public List<Dipendente> getAllDipendenti () {
 		return (List<Dipendente>) repo.findAll();	

@@ -14,14 +14,5 @@ public class DispositivoConfiguration {
 	@Scope("prototype")
 	public Dispositivo customDevice() {
 		return new Dispositivo();
-	}
-	
-	@Bean("ParamDispositivo")
-	@Scope("prototype")
-	public Dispositivo paramDevice(Dipendente dip) {
-		Dispositivo D = new Dispositivo();
-		D.setDipendente(dip);
-		return D;
-	}
-	
+	}	
 }

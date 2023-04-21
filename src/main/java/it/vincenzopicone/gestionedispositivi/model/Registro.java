@@ -31,9 +31,9 @@ public class Registro {
 	private Long id;
 	@JsonIgnoreProperties("dispositivo")
 	@JoinColumn(name="id_dispositivo")
-	@ManyToMany(mappedBy="dispositivi")
+	@ManyToOne
 	private Dispositivo dispositivi;
-	@ManyToMany(mappedBy="dipendenti")
+	@ManyToOne
 	@JsonIgnoreProperties("dipendente")
 	@JoinColumn(name="id_dipendente")
 	private Dipendente dipendente;

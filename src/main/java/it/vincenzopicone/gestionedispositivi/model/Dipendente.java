@@ -36,7 +36,7 @@ public class Dipendente {
 	@Column(nullable = false, unique=true)
 	private String email;
 	@JsonIgnore
-	@OneToMany(mappedBy="dipendenti")
+	@OneToMany
 	private List<Dispositivo> dispositivi;
 	
 	public Dipendente(String username, String nome, String cognome, String email) {

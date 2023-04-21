@@ -8,14 +8,18 @@ import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Service;
 
 import it.vincenzopicone.gestionedispositivi.model.Dipendente;
+import it.vincenzopicone.gestionedispositivi.model.Dispositivo;
 import it.vincenzopicone.gestionedispositivi.model.Registro;
 import it.vincenzopicone.gestionedispositivi.repository.RegistroRepository;
 import jakarta.persistence.EntityExistsException;
 import jakarta.persistence.EntityNotFoundException;
+import lombok.extern.slf4j.Slf4j;
 
 @Service
+@Slf4j
 public class RegistroService {
 	@Autowired RegistroRepository repo;
+	@Autowired DispositivoService dispoRepo;
 	
 	
 	
@@ -23,14 +27,20 @@ public class RegistroService {
 	@Autowired @Qualifier("ParamRegistrazione") private ObjectProvider<Registro> paramRegistrazioneProvider;
 
 	
-	public Registro createRegistro(Registro reg) {
-	////da sistemare da associare al'id del dispositivo
-//		if(repo.existsByEmail(reg.getEmail())) {
-//			throw new EntityExistsException("Il dispositivo è già associato");
+	public Registro createRegistro(Dipendente ut, Dispositivo dis) {
+		
+		
+		Registro R = paramRegistrazioneProvider.getObject(ut, dis);
+//		List<Registro> check = repo.findByIdDispositivo(dis.getId());
+//		if(check.size() > 0) {
+//			log.info("Il dispositivo è già associato");	
 //		} else {
-		repo.save(reg);
-//		}
-		return reg;
+		dis.setAssegnato(true);
+		dis.setDisponibile(false);
+		dispoRepo.updateDispositivo(dis);
+			repo.save(R);
+//			}
+		return R;
 		
 	}
 	

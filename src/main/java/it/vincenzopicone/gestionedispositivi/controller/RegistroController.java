@@ -34,11 +34,16 @@ public class RegistroController {
 	}
 	
 	
-	@PostMapping
-	public ResponseEntity<?> createDipendenti(@RequestBody Registro reg){
-		return new ResponseEntity<>(service.createRegistro(reg), HttpStatus.CREATED);
-	
-	}
+//	@PostMapping
+//	public ResponseEntity<?> createDipendenti(@RequestBody Registro reg){
+//		return new ResponseEntity<>(service.createRegistro(reg), HttpStatus.CREATED);
+//	
+//	}
+//	@PostMapping
+//	public ResponseEntity<?> createDipendenti(@RequestBody Registro reg){
+//		return new ResponseEntity<>(service.createParamRegistro(reg), HttpStatus.CREATED);
+//	
+//	}
 	@DeleteMapping("/{id}")
 	public ResponseEntity<String> deleteDipendenti(@PathVariable Long id) {
 		return new ResponseEntity<String>(service.removeRegistrazione(id), HttpStatus.OK);

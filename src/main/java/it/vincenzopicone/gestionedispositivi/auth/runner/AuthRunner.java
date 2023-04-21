@@ -13,6 +13,7 @@ import org.springframework.stereotype.Component;
 
 import it.vincenzopicone.gestionedispositivi.auth.entity.ERole;
 import it.vincenzopicone.gestionedispositivi.auth.entity.Role;
+import it.vincenzopicone.gestionedispositivi.auth.entity.User;
 import it.vincenzopicone.gestionedispositivi.auth.repository.RoleRepository;
 import it.vincenzopicone.gestionedispositivi.auth.repository.UserRepository;
 import it.vincenzopicone.gestionedispositivi.auth.service.AuthService;
@@ -34,6 +35,16 @@ public class AuthRunner implements ApplicationRunner {
 	public void run(ApplicationArguments args) throws Exception {
 		System.out.println("Run...");
 		setRoleDefault();
+//		Role R1 = new Role(1l, ERole.ROLE_ADMIN);
+//		Role R2 = new Role(1l, ERole.ROLE_MODERATOR);
+//		Role R3 = new Role(1l, ERole.ROLE_USER);
+//		Set<Role> R = new HashSet<>();
+//		R.add(R1);
+//		R.add(R2);
+//		R.add(R3);
+//		
+//		User U1 = new User(1l, "Vincenzo", "Picone", "v.picone@example.com", "password", R);
+		
 		
 	}
 	

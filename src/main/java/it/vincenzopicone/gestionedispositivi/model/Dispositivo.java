@@ -31,41 +31,24 @@ public class Dispositivo {
 	@Column(nullable = false)
 	@Enumerated(EnumType.STRING)
 	private TipoDispositivo tipodispositivo;
-	@ManyToOne
-	@JsonIgnoreProperties("dipendente")
-	@JoinColumn(name="id_dipendente")
-	private Dipendente dipendente;
-	@Column (nullable = false)
+//	@ManyToOne
+//	@JsonIgnoreProperties("dipendente")
+//	@JoinColumn(name="id_dipendente")
+//	private Dipendente dipendente;
+	@Column
 	private Boolean disponibile;
-	@Column(nullable = false)
+	@Column
 	private Boolean assegnato;
-	@Column(nullable = false)
+	@Column
 	private Boolean inmanutenzione;
-	@Column(nullable = false)
+	@Column
 	private Boolean dismesso;
 	
 	public Dispositivo(TipoDispositivo tipodispositivo) {
-		super();
 		this.tipodispositivo = tipodispositivo;
 		this.assegnato = false;
 		this.inmanutenzione = false;
 		this.dismesso = false;
 		this.disponibile = true;
-	}
-
-	public Dispositivo(TipoDispositivo tipodispositivo, Dipendente dipendente) {
-		super();
-		this.tipodispositivo = tipodispositivo;
-		this.dipendente = dipendente;
-		this.assegnato = true;
-		this.disponibile = false;
-		this.inmanutenzione = false;
-		this.dismesso = false;
-	}
-	
-	
-	
-	
-
-	
+	}	
 }
