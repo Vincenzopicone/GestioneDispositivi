@@ -14,41 +14,41 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import it.vincenzopicone.gestionedispositivi.model.Dipendente;
-import it.vincenzopicone.gestionedispositivi.service.DipendenteService;
+import it.vincenzopicone.gestionedispositivi.model.Registro;
+import it.vincenzopicone.gestionedispositivi.service.RegistroService;
 
 @RestController
-@RequestMapping("/dipendenti")
-
-public class DipendenteController {
-
-	@Autowired DipendenteService service;
+@RequestMapping("/registro")
+public class RegistroController {
+	
+	@Autowired RegistroService service;
 	
 	@GetMapping
-	public ResponseEntity<List<Dipendente>> getAll () {
-		return new ResponseEntity<List<Dipendente>>(service.getAllDipendenti(), HttpStatus.OK);
+	public ResponseEntity<List<Registro>> getAll () {
+		return new ResponseEntity<List<Registro>>(service.getAllElement(), HttpStatus.OK);
 	}
 	
 	@GetMapping("/{id}")
 	public ResponseEntity<?> getDipendenti(@PathVariable Long id) {
-		return new ResponseEntity<Dipendente>(service.getDipendente(id), HttpStatus.CREATED);
+		return new ResponseEntity<Registro>(service.getElement(id), HttpStatus.CREATED);
 	}
 	
 	
 	@PostMapping
-	public ResponseEntity<?> createDipendenti(@RequestBody Dipendente dipendente){
-		return new ResponseEntity<>(service.createDipendente(dipendente), HttpStatus.CREATED);
+	public ResponseEntity<?> createDipendenti(@RequestBody Registro reg){
+		return new ResponseEntity<>(service.createRegistro(reg), HttpStatus.CREATED);
 	
 	}
 	@DeleteMapping("/{id}")
 	public ResponseEntity<String> deleteDipendenti(@PathVariable Long id) {
-		return new ResponseEntity<String>(service.removeDipendente(id), HttpStatus.OK);
+		return new ResponseEntity<String>(service.removeRegistrazione(id), HttpStatus.OK);
 
 	}
 	
 	@PutMapping
-	public ResponseEntity<?> updateUtente(@RequestBody Dipendente dipendente){
-		return new ResponseEntity<>(service.updateDipendente(dipendente), HttpStatus.CREATED);
+	public ResponseEntity<?> updateUtente(@RequestBody Registro reg){
+		return new ResponseEntity<>(service.updateRegistrazione(reg), HttpStatus.CREATED);
 		
 	}
+
 }

@@ -6,22 +6,24 @@ import org.springframework.context.annotation.Scope;
 
 import it.vincenzopicone.gestionedispositivi.model.Dipendente;
 import it.vincenzopicone.gestionedispositivi.model.Dispositivo;
+import it.vincenzopicone.gestionedispositivi.model.Registro;
 
 @Configuration
-public class DispositivoConfiguration {
+public class RegistroConfiguration {
 	
-	@Bean("CustomDispositivo")
+	@Bean("NuovaRegistrazione")
 	@Scope("prototype")
-	public Dispositivo customDevice() {
-		return new Dispositivo();
+	public Registro nuovaRegistrazione() {
+		return new Registro();
 	}
 	
-	@Bean("ParamDispositivo")
+	@Bean("ParamRegistrazione")
 	@Scope("prototype")
-	public Dispositivo paramDevice(Dipendente dip) {
-		Dispositivo D = new Dispositivo();
-		D.setDipendente(dip);
-		return D;
+	public Registro paramRegistrazione(Dipendente dipe, Dispositivo disp) {
+		Registro R = new Registro();
+		R.setDipendente(dipe);
+		R.setDispositivi(disp);
+		return R;
 	}
-	
+
 }
