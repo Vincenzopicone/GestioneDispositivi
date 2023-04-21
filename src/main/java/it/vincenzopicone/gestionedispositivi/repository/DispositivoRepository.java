@@ -1,5 +1,7 @@
 package it.vincenzopicone.gestionedispositivi.repository;
 
-public class DispositivoRepository {
+import org.springframework.data.repository.CrudRepository;
+
+public interface DispositivoRepository extends CrudRepository<T, ID> {
 
 }

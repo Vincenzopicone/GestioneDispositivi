@@ -1,6 +1,5 @@
 package it.vincenzopicone.gestionedispositivi.model;
 
-import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
@@ -16,23 +15,11 @@ import lombok.NoArgsConstructor;
 @Data
 @Builder
 @Entity
-@Table(name="dispositivi")
-public class Dispositivo {
+@Table(name="dipendenti")
+public class Dipendente {
 	
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
-	@Column(nullable = false)
-	private TipoDispositivo tipodispositivo;
-	@Column
-	private Dipendente dipendente;
-	@Column
-	private Boolean disponibile;
-	@Column
-	private Boolean assegnato;
-	@Column
-	private Boolean inmanutenzione;
-	@Column
-	private Boolean dismesso;
 
 }
